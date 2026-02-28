@@ -39,8 +39,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const url =
-        "/auth/login?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=" +
-        process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+        "/auth/login?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=12345678901iojklhgvcfdtre453678y";
       console.log(url);
       const { data } = await api.post(url, { email, password });
 
@@ -72,7 +71,9 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (username, email, password, role) => {
     try {
-      const { data } = await api.post("/auth/register", {
+      const baseurl =
+        "/auth/register?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=12345678901iojklhgvcfdtre453678y";
+      const { data } = await api.post(baseurl, {
         username,
         email,
         password,
