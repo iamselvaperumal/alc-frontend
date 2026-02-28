@@ -42,6 +42,7 @@ const Login = () => {
       setPassword("");
     } catch (_error) {
       // Use the error message set by AuthContext.login(), or fall back to a safe extraction
+      console.log(_error);
       const errorMsg =
         _error?.response?.data?.message ||
         (_error?.request && !_error?.response

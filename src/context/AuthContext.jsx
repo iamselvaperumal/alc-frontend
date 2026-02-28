@@ -38,7 +38,11 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const { data } = await api.post("/auth/login", { email, password });
+      const url =
+        "/auth/login?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=" +
+        proccess.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+      console.log(url);
+      const { data } = await api.post(url, { email, password });
 
       // Store token in localStorage
       if (data.token) {
