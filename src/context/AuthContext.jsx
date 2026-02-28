@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const url =
         "/auth/login?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=" +
-        proccess.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+        process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
       console.log(url);
       const { data } = await api.post(url, { email, password });
 
