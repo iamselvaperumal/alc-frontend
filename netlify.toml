@@ -1,0 +1,11 @@
+# netlify.toml
+
+[build]
+  publish = "dist"   # change if your build folder is different
+  command = "npm run build"
+
+# Redirects (SPA routing support)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
