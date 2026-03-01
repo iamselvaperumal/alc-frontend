@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const baseurl =
         "/auth/register?x-vercel-set-bypass-cookie=true&x-vercel-protection-bypass=12345678901iojklhgvcfdtre453678y";
-      const { data } = await api.post("/auth/register", {
+      const { data } = await api.post(baseurl, {
         username,
         email,
         password,
